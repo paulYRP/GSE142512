@@ -1,0 +1,35 @@
+Package: GSE142512
+Type: Package
+Title: GSE142512 DNA Methylation ExperimentHub Data
+Version: 0.99.0
+Date: 2026-07-06
+Authors@R: person(
+    given = "Paul",
+    family = "Ruiz Pinto",
+    role = c("aut", "cre"),
+    email = "ruizpint@qut.edu.au",
+    comment = c(ORCID = "0009-0007-6714-3566"))
+Description: Provides ExperimentHub access to processed DNA methylation
+    resources derived from GEO accession GSE142512. The resources contain
+    Illumina HumanMethylation450 and Infinium MethylationEPIC data represented
+    as RangedSummarizedExperiment objects with beta, M, and CN assays, hg19
+    genomic ranges, and sample phenotype metadata.
+URL: https://github.com/paulYRP/GSE142512
+BugReports: https://github.com/paulYRP/GSE142512/issues
+License: Artistic-2.0
+Depends:
+    R (>= 4.4.0)
+Imports:
+    ExperimentHub,
+    utils
+Suggests:
+    BiocStyle,
+    ExperimentHubData,
+    knitr,
+    rmarkdown,
+    SummarizedExperiment
+VignetteBuilder: knitr
+biocViews: ExperimentData, ExperimentHub, GEO, Homo_sapiens_Data,
+    MethylationArrayData, MicroarrayData, Tissue
+Encoding: UTF-8
+NeedsCompilation: no

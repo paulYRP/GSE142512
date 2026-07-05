@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.git$
+^\.gitignore$
+^\.github$
+^GSE142512\.Rcheck$
+^GSE142512\.BiocCheck$
+^GSE142512_.*\.tar\.gz$

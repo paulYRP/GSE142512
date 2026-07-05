@@ -1,0 +1,80 @@
+---
+title: "GSE142512 DNA methylation data"
+author: "Paul Ruiz Pinto"
+date: "`r Sys.Date()`"
+vignette: >
+  %\VignetteIndexEntry{GSE142512 DNA methylation data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document
+---
+
+# GSE142512 DNA methylation data
+
+`GSE142512` provides access to processed DNA methylation data derived from GEO
+accession
+[GSE142512](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE142512).
+The source data include GPL13534 Illumina HumanMethylation450 and GPL21145
+Infinium MethylationEPIC arrays.
+
+The ExperimentHub resources are `RangedSummarizedExperiment` objects with beta,
+M, and CN assays. The 450K resource contains 485,512 CpG loci across 184
+samples from 84 subjects. The EPIC resource contains 865,859 CpG loci across
+211 samples from 90 subjects. Genomic ranges use hg19 coordinates.
+
+The source publication is:
+
+Johnson RK, Vanderlinden LA, Dong F, Carry PM, Seifert J, Waugh K, Shorrosh H,
+Fingerlin T, Frohnert BI, Yang IV, Kechris K, Rewers M, Norris JM.
+Longitudinal DNA methylation differences precede type 1 diabetes. Scientific
+Reports. 2020;10:3721. doi:10.1038/s41598-020-60758-0.
+
+# Accessing the resources
+
+The data can be located in `ExperimentHub` using the GEO accession or the
+package name. The loaded objects can then be inspected with standard
+`SummarizedExperiment` accessors.
+
+```{r access-resource, eval=FALSE}
+library(ExperimentHub)
+library(GSE142512)
+library(SummarizedExperiment)
+
+eh <- ExperimentHub()
+query(eh, "GSE142512")
+
+se450k <- GSE142512(platform = "450K")
+seEPIC <- GSE142512(platform = "EPIC")
+
+se450k <- GSE142512_GPL13534_450K()
+seEPIC <- GSE142512_GPL21145_EPIC()
+
+dim(se450k)
+assayNames(se450k)
+colData(se450k)
+rowRanges(se450k)
+metadata(se450k)
+```
+
+The package metadata describe their sources.
+
+```{r local-metadata}
+metadataFile <- system.file("extdata", "metadata.csv", package = "GSE142512")
+metadata <- utils::read.csv(metadataFile, stringsAsFactors = FALSE)
+metadata[, c("Title", "Genome", "SourceType", "RDataClass", "DispatchClass")]
+```
+
+# Data availability
+
+The serialized `RangedSummarizedExperiment` objects are hosted on Zenodo:
+
+```{r zenodo-location}
+paste0(metadata$Location_Prefix, metadata$RDataPath)
+```
+
+# Session information
+
+```{r sessionInfo}
+sessionInfo()
+```
