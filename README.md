@@ -1,4 +1,7 @@
+<a href="https://doi.org/10.5281/zenodo.21198533"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21198533.svg" alt="DOI"></a>
+
 # GSE142512
+
 
 `GSE142512` is a Bioconductor ExperimentHub data package for processed DNA
 methylation resources derived from GEO Series GSE142512.
