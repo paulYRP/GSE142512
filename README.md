@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21198533.svg)](https://doi.org/10.5281/zenodo.21198533)
-# GSE142512
 
+# GSE142512
 
 `GSE142512` is a Bioconductor ExperimentHub data package for processed DNA
 methylation resources derived from GEO Series GSE142512.
@@ -15,13 +15,6 @@ The package provides access to two Zenodo-hosted
 
 Both resources include beta, M, and CN assays, hg19 genomic ranges, and
 sample-level phenotype metadata.
-
-The source study is:
-
-Johnson RK, Vanderlinden LA, Dong F, Carry PM, Seifert J, Waugh K, Shorrosh H,
-Fingerlin T, Frohnert BI, Yang IV, Kechris K, Rewers M, Norris JM.
-Longitudinal DNA methylation differences precede type 1 diabetes. Scientific
-Reports. 2020;10:3721. doi:10.1038/s41598-020-60758-0.
 
 The hosted files are available from Zenodo:
 
